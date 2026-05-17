@@ -1,0 +1,75 @@
+{% extends 'app/_base.html' %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+<section class="w-full text-center py-12">
+    <h1 class="text-4xl font-bold">
+        Welcome to <span class="text-red-500">SomaliChat</span>
+    </h1>
+    <p class="text-gray-600 mt-3">
+        Share posts, connect with people, and explore content.
+    </p>
+</section>
+
+<!-- POSTS FEED -->
+<div class="w-full mx-auto px-4 py-8 space-y-6 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 ">
+
+    <div class="rounded-xl shadow-sm border-2 border-dashed border-red-500 overflow-hidden justify-center items-center flex h-screen">
+        <button class="bg-black text-white w-18 h-10 rounded-md cursor-pointer font-bold">+</button>
+    </div>
+
+    {% for c in data %}
+
+    <!-- POST CARD -->
+    <div class="rounded-xl shadow-sm overflow-hidden">
+
+        <!-- Image -->
+        <img src="{{ c.img }}"
+        class="w-full object-cover max-h-[450px]"
+        alt="{{ c.title }}">
+        
+        <!-- Post Header -->
+        <div class="flex items-center justify-between p-3">
+            <div class="font-semibold text-black">
+                {{ c.title }}
+            </div>
+            <span class="text-xs text-gray-500">2h ago</span>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex justify-between px-4 py-3 text-sm text-gray-600">
+
+            <div class="flex gap-4">
+
+                <!-- Like -->
+                <button class="flex items-center gap-1 hover:text-red-500">
+                    ❤️ Like
+                </button>
+                
+                <!-- Comment -->
+                <button class="hover:text-black">
+                    💬 Comment
+                </button>
+
+                <!-- Share -->
+                <button class="hover:text-black">
+                    🔄 Share
+                </button>
+
+            </div>
+            
+            <!-- Save -->
+            <button class="text-gray-500 hover:text-red-500">
+                🔖 Save
+            </button>
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}
