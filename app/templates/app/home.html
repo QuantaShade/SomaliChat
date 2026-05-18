@@ -3,7 +3,7 @@
 {% block content %}
 
 <!-- HERO SECTION -->
-<section class="w-full text-center py-12">
+<section class="w-full text-center mt-22 mb-8">
     <h1 class="text-4xl font-bold">
         Welcome to <span class="text-red-500">SomaliChat</span>
     </h1>
@@ -16,13 +16,13 @@
 <div class="w-full mx-auto px-4 py-8 space-y-6 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 ">
 
     <div class="h-52 md:h-auto rounded-xl border-2 border-dashed border-red-500 overflow-hidden justify-center items-center flex">
-        <button class="bg-black text-white w-18 h-10 rounded-md cursor-pointer font-bold">+</button>
+        <button class="dark:bg-white dark:text-black bg-black text-white w-18 h-10 rounded-md cursor-pointer font-bold">+</button>
     </div>
 
     {% for c in data %}
 
     <!-- POST CARD -->
-    <div class="rounded-xl overflow-hidden">
+    <div class="rounded-xl overflow-hidden shadow-sm">
 
         <!-- Image -->
         <img src="{{ c.img }}"
