@@ -13,10 +13,23 @@
 </section>
 
 <!-- POSTS FEED -->
-<div class="w-full mx-auto px-4 py-8 space-y-6 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 ">
+<div class="w-full mx-auto px-4 py-8 space-y-6 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
 
+    <div id="form" class="duration-200 absolute left-0 right-0 m-auto bg-blue-200 text-black shadow-sm rounded-lg w-125 h-100">
+        <div class="flex justify-end">
+            <button class="bg-black rounded-md text-white cursor-pointer w-10 h-8 m-2" type="button" id="closeBtn">x</button>
+        </div>
+        <form method="post" class="relative md:h-auto rounded-xl items items-center flex flex-col p-5 gap-2">
+        {%csrf_token%}
+        <label class="w-full text-start">Title</label>
+        <input class="w-full rounded-full pl-4" type="text" name="title" required>
+        <label class="w-full text-start">Image</label>
+        <input class="w-full rounded-full pl-4" type="text" name="img" required>
+        <button type="submit" class="w-full h-12 bg-black text-white rounded-full">Save</button>
+    </form>
+    </div>
     <div class="h-52 md:h-auto rounded-xl border-2 border-dashed border-red-500 overflow-hidden justify-center items-center flex">
-        <button class="dark:bg-white dark:text-black bg-black text-white w-18 h-10 rounded-md cursor-pointer font-bold">+</button>
+        <button class="dark:bg-white dark:text-black bg-black text-white w-18 h-10 rounded-md cursor-pointer font-bold" id="openBtn">+</button>
     </div>
 
     {% for c in data %}
