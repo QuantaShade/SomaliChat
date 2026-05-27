@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import home, about
+from .views import home, contentPost
 
 urlpatterns = [
     path('', home),
-    path('about/', about)
+    path('content/post/', contentPost, name='createContent')
 ]

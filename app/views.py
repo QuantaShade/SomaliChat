@@ -8,6 +8,9 @@ def home(request):
     context = {
         'data': content
     }
+    return render(request, 'app/home.html', context)
+
+def contentPost(request):
     if request.method == "POST":
         title = request.POST.get('title')
         img = request.POST.get('img')
@@ -17,7 +20,4 @@ def home(request):
         )
         content.save()
         return redirect("/")
-    return render(request, 'app/home.html', context)
-
-def about(request):
-    return render(request, 'app/about.html')
+    return render(request, 'components/contentPostDialog.html')
