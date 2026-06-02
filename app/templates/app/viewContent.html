@@ -1,8 +1,8 @@
-{% extends 'app/base.html' %}
+{% extends 'app/_base.html' %}
 
 {% block content %}
 
-<div class="container mx-auto max-w-4xl px-4 py-8">
+<div class="container px-4 py-8">
 
     <!-- Back Button -->
     <div class="mb-4">
@@ -12,13 +12,13 @@
     </div>
 
     <!-- Content Card -->
-    <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+    <div class="flex shadow-lg border-0 rounded-4 overflow-hidden">
 
         <!-- Image -->
         <img
             src="{{ content.img }}"
             alt="{{ content.title }}"
-            class="w-full h-[500px] object-cover"
+            class="w-[400px] h-full object-cover"
         >
 
         <!-- Content Body -->
