@@ -19,12 +19,14 @@
     {% for c in data %}
 
     <!-- POST CARD -->
-    <a href="{%url 'viewContent' c.id%}" class="rounded-xl overflow-hidden shadow-sm">
+    <div class="rounded-xl overflow-hidden shadow-sm">
 
         <!-- Image -->
-        <img src="{{ c.img }}"
-        class="w-full object-cover"
-        alt="{{ c.title }}">
+        <a href="{%url 'viewContent' c.id%}">
+            <img src="{{ c.img }}"
+            class="w-full object-cover"
+            alt="{{ c.title }}">
+        </a>
         
         <!-- Post Header -->
         <div class="flex items-center justify-between p-3">
@@ -63,7 +65,7 @@
 
         </div>
 
-    </a>
+    </div>
 
     {% endfor %}
 
