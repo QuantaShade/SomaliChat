@@ -1,0 +1,12 @@
+{%extends 'app/_base.html'%}
+{%block content%}
+
+<section class="w-full h-screen p-4 mt-12">
+    <form method="POST">
+        {%csrf_token%}
+        {{form}}
+    <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</section>
+
+{%endblock%}

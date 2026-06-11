@@ -4,6 +4,7 @@ from django.db import models
 
 class User(models.Model):
     userName = models.CharField(max_length=10)
+    email = models.EmailField()
     password = models.CharField(max_length=100)
     createdAt = models.DateTimeField(auto_now_add=True)
 

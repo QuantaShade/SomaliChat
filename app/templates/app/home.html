@@ -33,7 +33,7 @@
             <div class="font-semibold text-black">
                 {{ c.title }}
             </div>
-            <span class="text-xs text-gray-500">2h ago</span>
+            <span class="text-xs text-gray-500">{{ c.postedAt }}</span>
         </div>
 
         <!-- Actions -->
@@ -57,13 +57,18 @@
                 </button>
 
             </div>
-            
-            <!-- Save -->
-            <button class="text-gray-500 hover:text-red-500">
-                🔖 Save
-            </button>
-
         </div>
+        <!-- Save -->
+        <a href="{%url 'deleteContent' c.id %}" class="flex p-2">
+            <button class="w-full btn text-white bg-red-500 hover:bg-red-600 duration-200 P-4">
+                Delete
+            </button>
+        </a>
+        <a href="{%url 'editContent' c.id %}" class="flex p-2">
+            <button class="w-full btn text-white bg-yellow-500 hover:bg-yellow-600 duration-200 P-4">
+                Edit
+            </button>
+        </a>
 
     </div>
 

@@ -2,16 +2,17 @@
 {%block content%}
 
 <section class="w-full h-screen p-4 mt-12">
-    <form method="POST">
+    <form method="POST" class="p-4 flex flex-col gap-3">
         {%csrf_token%}
-        <div class="mb-3">
-      <label for="exampleFormControlTextarea1" class="form-label">Title</label>
-      <textarea name="title" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
-    </div>
-    <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Img</label>
-        <input type="text" class="form-control" placeholder="Img" name="img" required>
-    </div>
+        {%for f in form%}
+        <label>{{f.label}}</label>
+        {{f}}
+        {%if f.errors%}
+        <p class="text-red-500 font-bold">
+            {{f.errors.0}}
+        </p>
+        {%endif%}
+        {%endfor%}
     <button class="btn btn-primary" type="submit">Submit</button>
     </form>
 </section>
