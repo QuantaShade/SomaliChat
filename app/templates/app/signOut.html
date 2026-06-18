@@ -1,0 +1,14 @@
+{%extends 'app/_base.html'%}
+{%block content%}
+
+<div class="w-full h-screen flex justify-center items-center">
+    <form method="POST">
+        {%csrf_token%}
+        <div class="grid gap-2">
+            are you sure to sign out
+            <button class="btn btn-danger">Sign Out</button>
+        </div>
+    </form>
+</div>
+
+{%endblock%}
